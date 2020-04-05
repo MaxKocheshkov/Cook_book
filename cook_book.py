@@ -1,7 +1,8 @@
 cook_book = {}
 list_data = []
 # Task 1
-with open('cook_book_file.txt', encoding='utf8') as file_cook:
+def open_file(cook_book): 
+  with open('cook_book_file.txt', encoding='utf8') as file_cook:
     for line in file_cook:
         dish_name = line.strip()
         quantity_ing = int(file_cook.readline().strip())
@@ -14,9 +15,9 @@ with open('cook_book_file.txt', encoding='utf8') as file_cook:
           cook_book[dish_name] = list_data
 
         file_cook.readline()
-print('cook_book = ')         
-for dishes, consist_list in cook_book.items():
-  print(f'{dishes} : \n {consist_list}')
+  print('cook_book = ')         
+  for dishes, consist_list in cook_book.items():
+    print(f'{dishes} : \n {consist_list}')
 
 # Task 2
 def get_shop_list_by_dishes(dishes, person_count):
